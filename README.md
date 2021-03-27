@@ -1,4 +1,6 @@
-El proyecto esta hosteado con Firebase en [Urbetrack-Demo](https://pityviglietti.web.app/).
+El proyecto esta hosteado con Firebase [¡Acá!](https://pityviglietti.web.app/).
+
+La contraseña es 123456 para todos los usuarios
 
 ## Estructura del proyecto
 
