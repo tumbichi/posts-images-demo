@@ -5,9 +5,11 @@ import Typography from '@material-ui/core/Typography';
 import { Card, CardImage, CardActionArea, CardActions, CardContent } from './styles';
 
 import Button from '../Button';
+import { locale } from '../../constants';
 
 function CardPost({ title, image, onClick }) {
   const theme = useTheme();
+  const strings = locale();
   return (
     <>
       <Card theme={theme}>
@@ -20,7 +22,7 @@ function CardPost({ title, image, onClick }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button text="Ver más" size="small" color="primary" variant="text" onClick={onClick} />
+          <Button text={strings.card.more} size="small" color="primary" variant="text" onClick={onClick} />
         </CardActions>
       </Card>
     </>

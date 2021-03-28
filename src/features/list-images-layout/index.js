@@ -11,7 +11,7 @@ const ListPostsLayout = ({ posts, pageNumber, navigateToPost, requestPagePost })
   const theme = useTheme();
   const pageRef = useRef(pageNumber);
   const [loading, setLoading] = useState(true);
-
+  
   const handleNextPage = useCallback(
     debounce(() => {
       setLoading(true);
@@ -64,7 +64,7 @@ const ListPostsLayout = ({ posts, pageNumber, navigateToPost, requestPagePost })
     hideLoading();
   }, [posts]);
 
-  const cardList = () =>
+  const renderCardList = () =>
     posts.map(({ id, author, thumbnail_url }) => (
       <CardPost
         key={`CardPost${id}`}
@@ -78,7 +78,7 @@ const ListPostsLayout = ({ posts, pageNumber, navigateToPost, requestPagePost })
 
   return (
     <Container theme={theme}>
-      <ListContainer onScroll={handleScroll}>{cardList()}</ListContainer>
+      <ListContainer onScroll={handleScroll}>{renderCardList()}</ListContainer>
       <LoaderContainer>
         {loading ? <Loader type="ThreeDots" color={theme.palette.primary.main} height={120} width={120} /> : null}
       </LoaderContainer>

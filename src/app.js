@@ -9,7 +9,7 @@ import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import PostPage from './pages/post';
 // Components
-import Navbar from './containers/navbar-layout';
+import Navbar from './features/navbar-layout';
 import { palette as colors } from './constants';
 
 const App = ({ darkMode }) => {

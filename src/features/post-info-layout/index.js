@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useTheme } from '@material-ui/core/styles';
-import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
@@ -10,9 +10,15 @@ import Dialog from '../../components/Dialog';
 import { changeDimensionToImageURL, downloadImage } from '../../utils/helpers';
 import { locale } from '../../constants';
 
-const PostInfoLayout = ({ postId, posts, navigateToHome }) => {
+const PostInfoLayout = ({ postId, navigateToHome }) => {
   const theme = useTheme();
-  const strings = locale();
+  const { posts, language } = useSelector(({ post, config }) => {
+    return {
+      posts: post.posts,
+      language: config.language,
+    };
+  });
+  const strings = locale(language);
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dialogShow, setDialogShow] = useState(false);
@@ -146,10 +152,4 @@ const PostInfoLayout = ({ postId, posts, navigateToHome }) => {
   );
 };
 
-const mapStateToProps = ({ post }) => {
-  return {
-    posts: post.posts,
-  };
-};
-
-export default connect(mapStateToProps)(PostInfoLayout);
+export default PostInfoLayout;

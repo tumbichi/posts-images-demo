@@ -1,6 +1,5 @@
 import { saveAs } from 'file-saver';
 
-// eslint-disable-next-line import/prefer-default-export
 export const convertImageURLtoThumbnailURL = (downloadUrl) => {
   const arrSplited = downloadUrl.split('/');
   const height = Math.floor(Number.parseInt(arrSplited[5], 10) * 0.25);

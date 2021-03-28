@@ -6,8 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: ${({ theme }) => theme.spacing(dimensions.XXXS)}px ;
-
+  margin: ${({ theme }) => theme.spacing(dimensions.XXXS)}px;
 `;
 
 export const ListContainer = styled.div`

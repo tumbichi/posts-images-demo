@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Typography } from '@material-ui/core';
-import ListImagesContainer from '../containers/list-images-layout';
-import NavigationDrawerContainer from '../containers/navigation-drawer-layout';
+import ListImagesContainer from '../features/list-images-layout';
+import NavigationDrawerContainer from '../features/navigation-drawer-layout';
 
 const HomePage = ({ username }) => {
   const history = useHistory();

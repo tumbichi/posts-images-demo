@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as ButtonStyle } from './styles';
+import { Button as ButtonWrapper} from './styles';
 
-const Button = ({ name, text, height, width, variant, color, size, startIcon, endIcon, onClick }) => {
+const Button = ({ name, text, type, height, width, variant, color, size, startIcon, endIcon, onClick }) => {
   return (
-    <ButtonStyle
+    <ButtonWrapper
+      type={type}
       name={name}
       height={height}
       width={width}
@@ -16,7 +17,7 @@ const Button = ({ name, text, height, width, variant, color, size, startIcon, en
       onClick={onClick}
     >
       {text}
-    </ButtonStyle>
+    </ButtonWrapper>
   );
 };
 

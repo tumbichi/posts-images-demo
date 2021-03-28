@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import LoginContainer from '../containers/login-layout';
+import LoginContainer from '../features/login-layout';
 
-const LoginPage = ({ username }) => {
-  let history = useHistory();
+const LoginPage = () => {
+  const history = useHistory();
+  const { username } = useSelector(({ user }) => ({
+    username: user.name,
+  }));
+
+  const goToHome = () => {
+    history.push('home');
+  };
 
   useEffect(() => {
     if (username) {
       goToHome();
     }
   }, [username]);
-
-  const goToHome = () => {
-    history.push('home');
-  };
 
   return (
     <>
@@ -24,10 +27,4 @@ const LoginPage = ({ username }) => {
   );
 };
 
-const mapStateToProps = ({ user }) => {
-  return {
-    username: user.name,
-  };
-};
-
-export default connect(mapStateToProps)(LoginPage);
+export default LoginPage;

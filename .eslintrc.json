@@ -12,8 +12,22 @@
     "node": true
   },
   "rules": {
-    "jsx-a11y/href-no-hash": ["off"],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/href-no-hash": [
+      "off"
+    ],
+    "react/prop-types": [
+      "off"
+    ],
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "max-len": [
       "warn",
       {

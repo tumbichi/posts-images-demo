@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { changeOnPagePost } from '../store/actions/config.action';
-import PostInfoContainer from '../containers/post-info-layout';
+import PostInfoContainer from '../features/post-info-layout';
 
 const PostPage = ({ changeOnPagePost }) => {
   const history = useHistory();

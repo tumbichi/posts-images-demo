@@ -5,6 +5,7 @@ export const strings = {
       password: 'Contraseña',
       login: 'Iniciar Sesión',
       invalid_password: 'Contraseña incorrecta',
+      info: `La contraseña es `,
     },
     info: {
       author: 'Autor: ',
@@ -17,6 +18,13 @@ export const strings = {
       logout: 'Cerrar Sesión',
       hello: 'Hola',
     },
+    languages: {
+      es: 'Español',
+      en: 'Ingles',
+    },
+    card: {
+      more: 'Ver más',
+    },
   },
   en: {
     login: {
@@ -24,6 +32,7 @@ export const strings = {
       password: 'Password',
       login: 'Login',
       invalid_password: 'Invalid password',
+      info: 'The password is ',
     },
     info: {
       author: 'Author: ',
@@ -36,18 +45,25 @@ export const strings = {
       logout: 'Logout',
       hello: 'Hi',
     },
+    languages: {
+      en: 'English',
+      es: 'Spanish',
+    },
+    card: {
+      more: 'More',
+    },
   },
 };
 
-export const getLang = () => {
+/* export const getLang = () => {
   let lang = 'es';
   if (typeof navigator !== 'undefined') {
     if (navigator.language.search('es') >= 0) lang = 'es';
     if (navigator.language.search('en') >= 0) lang = 'en';
   }
   return lang;
-};
+}; */
 
-export const locale = () => {
-  return strings[getLang()];
+export const locale = (language = 'es') => {
+  return strings[language];
 };

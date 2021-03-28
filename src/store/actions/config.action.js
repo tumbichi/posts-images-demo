@@ -1,6 +1,7 @@
 export const TYPE_COLLAPSE_DRAWER = 'COLLAPSE_DRAWER';
 export const TYPE_CHANGE_THEME_MODE = 'CHANGE_THEME_MODE';
 export const TYPE_ON_PAGE_POST = 'CHANGE_ON_PAGE_POST';
+export const TYPE_SET_LANGUAGE = 'SET_LANGUAGE';
 
 export const collapseDrawer = (collapsed) => {
   return {
@@ -21,3 +22,8 @@ export const changeOnPagePost = (onPagePost) => {
     payload: onPagePost,
   };
 };
+
+export const setLanguage = (language) => ({
+  type: TYPE_SET_LANGUAGE,
+  payload: language,
+});
